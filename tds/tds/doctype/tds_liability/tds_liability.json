@@ -21,6 +21,7 @@
   "column_break_nkcv",
   "date_of_tax_deducted",
   "total_amount",
+  "paid_status",
   "column_break_dcqo",
   "amount_paid",
   "int_amount",
@@ -38,12 +39,16 @@
   "section_break_cukd",
   "reason_for_non_deduction__lower_deduction_if_any",
   "section_break_7uec",
-  "amended_from"
+  "challan",
+  "amended_from",
+  "column_break_uhxf",
+  "salary_slip"
  ],
  "fields": [
   {
    "fieldname": "section_break_7uec",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Refrence"
   },
   {
    "fieldname": "amended_from",
@@ -85,12 +90,6 @@
   {
    "fieldname": "column_break_rlnh",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section",
-   "fieldtype": "Link",
-   "label": "Section",
-   "options": "Section"
   },
   {
    "fieldname": "section_break_hgwn",
@@ -154,6 +153,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "date_on_which_tax_paid_to_the_credit_of_central_govt",
    "fieldtype": "Date",
    "label": "Date on which tax paid to the credit of Central Govt"
@@ -163,6 +163,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "bank_branch_code",
    "fieldtype": "Data",
    "label": "Bank Branch Code"
@@ -172,6 +173,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "challan_no_given_by_bank__tr_voucher_no",
    "fieldtype": "Data",
    "label": "Challan No given by Bank / Tr. Voucher No."
@@ -181,6 +183,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "challan_amount",
    "fieldtype": "Data",
    "label": "Challan Amount"
@@ -190,6 +193,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "reason_for_non_deduction__lower_deduction_if_any",
    "fieldtype": "Small Text",
    "label": "Reason for Non deduction / Lower Deduction, if Any"
@@ -204,13 +208,45 @@
    "fieldtype": "Link",
    "label": "Organization",
    "options": "Company"
+  },
+  {
+   "fieldname": "section",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section"
+  },
+  {
+   "fieldname": "column_break_uhxf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "salary_slip",
+   "fieldtype": "Link",
+   "label": "Salary Slip",
+   "options": "Salary Slip",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "paid_status",
+   "fieldtype": "Select",
+   "label": "Paid Status",
+   "options": "\nPaid\nUnpaid"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "challan",
+   "fieldtype": "Link",
+   "label": "Challan",
+   "options": "Challan",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-08 18:06:36.271593",
+ "modified": "2026-02-19 22:48:35.441251",
  "modified_by": "Administrator",
  "module": "TDS",
  "name": "TDS Liability",

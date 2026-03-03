@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-18 22:48:45.474417",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_y5jc",
+  "challan_no",
+  "paid_date",
+  "tds_amount",
+  "penalty",
+  "add_penalty",
+  "amended_from",
+  "column_break_otui",
+  "bsr_code",
+  "paid_through_account",
+  "interest",
+  "add_interest",
+  "paid_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_y5jc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Challan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "challan_no",
+   "fieldtype": "Data",
+   "label": "Challan No"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "paid_date",
+   "fieldtype": "Date",
+   "label": "Paid Date"
+  },
+  {
+   "fieldname": "column_break_otui",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "bsr_code",
+   "fieldtype": "Data",
+   "label": "BSR Code"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "paid_through_account",
+   "fieldtype": "Link",
+   "label": "Paid Through Account",
+   "options": "Bank Account"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.paid_amount",
+   "fieldname": "penalty",
+   "fieldtype": "Select",
+   "label": "Penalty",
+   "options": "\nYes\nNo"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.penalty == \"Yes\"",
+   "fieldname": "add_penalty",
+   "fieldtype": "Data",
+   "label": "Add Penalty"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "paid_amount",
+   "fieldtype": "Data",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.paid_amount",
+   "fieldname": "interest",
+   "fieldtype": "Select",
+   "label": "Interest",
+   "options": "\nYes\nNo"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.interest == \"Yes\"",
+   "fieldname": "add_interest",
+   "fieldtype": "Data",
+   "label": "Add Interest"
+  },
+  {
+   "fieldname": "tds_amount",
+   "fieldtype": "Data",
+   "label": "TDS Amount"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-03 21:23:10.548254",
+ "modified_by": "Administrator",
+ "module": "TDS",
+ "name": "Challan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
